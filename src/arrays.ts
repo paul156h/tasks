@@ -5,7 +5,11 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length === 0) {
+        return [];
+    }
+    const newNumbers: number[] = [numbers[0], numbers[numbers.length - 1]];
+    return newNumbers;
 }
 
 /**
@@ -13,7 +17,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const newNumbers = numbers.map((num: number): number => num * 3);
+    return newNumbers;
 }
 
 /**
@@ -21,7 +26,10 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    return numbers.map((str) => {
+        const parsedInt = parseInt(str);
+        return isNaN(parsedInt) ? 0 : parsedInt;
+    });
 }
 
 /**
@@ -32,7 +40,12 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    return amounts.map((num) => {
+        const parsedInt = num.startsWith("$")
+            ? parseInt(num.slice(1))
+            : parseInt(num);
+        return isNaN(parsedInt) ? 0 : parsedInt;
+    });
 };
 
 /**
@@ -41,7 +54,10 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const messages1 = messages.filter((str) => !str.endsWith("?"));
+    return messages1.map((str) => {
+        return str.endsWith("!") ? str.toUpperCase() : str;
+    });
 };
 
 /**
@@ -84,3 +100,7 @@ export function makeMath(addends: number[]): string {
 export function injectPositive(values: number[]): number[] {
     return [];
 }
+function lastIndexOf(numbers: number[]) {
+    throw new Error("Function not implemented.");
+}
+
