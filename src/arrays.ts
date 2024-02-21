@@ -128,6 +128,6 @@ export function injectPositive(values: number[]): number[] {
     }
 }
 
-function lastIndexOf(numbers: number[]) {
-    throw new Error("Function not implemented.");
-}
+//function lastIndexOf(numbers: number[]) {
+//    throw new Error("Function not implemented.");
+//}
