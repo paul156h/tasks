@@ -1,6 +1,3 @@
-/* eslint-disable indent */
-import { lstat } from "fs";
-
 /**
  * Consumes a single temperature in Fahrenheit (a number) and converts to Celsius
  * using this formula:
@@ -50,12 +47,12 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    switch (word.toUpperCase()) {
-        case "YES":
-            return true;
-        case "NO":
-            return false;
-        default:
-            return null;
+    if (word.toUpperCase() === "YES") {
+        return true;
+    }
+    if (word.toUpperCase() === "NO") {
+        return false;
+    } else {
+        return null;
     }
 }
