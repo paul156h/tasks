@@ -1,4 +1,4 @@
-import { parseConfigFileTextToJson } from "typescript";
+//import { parseConfigFileTextToJson } from "typescript";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
