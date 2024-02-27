@@ -82,11 +82,10 @@ export function toMarkdown(question: Question): string {
     if (question.type === "short_answer_question") {
         return `# ${question.name}\n${question.body}`;
     } else {
-        let output = `# ${question.name}\n${question.body}`;
-        for (let i = 0; i < question.options.length; i++) {
-            output += `\n- ${question.options[i]}`;
-        }
-        return output;
+        const optionsMarkdown = question.options
+            .map((option) => `- ${option}`)
+            .join("\n");
+        return `# ${question.name}\n${question.body}\n${optionsMarkdown}`;
     }
 }
 
