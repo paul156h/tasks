@@ -11,7 +11,7 @@ export function ChooseTeam(): JSX.Element {
         "Margaret Hamilton"
     ];
 
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
